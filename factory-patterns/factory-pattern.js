@@ -39,6 +39,7 @@ class ShapeFactory {
         } else if (shapeType.toLowerCase() == 'circle') {
             return new Circle()
         }
+        return null
     }
 }
 let shapeFactory = new ShapeFactory()
