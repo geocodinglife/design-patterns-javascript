@@ -1,4 +1,9 @@
 class Item {
+    constructor() {
+        if (new.target === Item) {
+            throw new Error('本类不能实例化');
+        }
+    }
     name() { }
     packing() { }
     price() { }
@@ -7,6 +12,11 @@ class Item {
 
 // --- packing
 class Packing {
+    constructor() {
+        if (new.target === Packing) {
+            throw new Error('本类不能实例化');
+        }
+    }
     pack() { }
 }
 
@@ -92,14 +102,14 @@ class Meal {
 
     getCost() {
         let cost = 0.0
-        for(const item of this.items) {
+        for (const item of this.items) {
             cost += item.price()
         }
         return cost
     }
 
     showItems() {
-        for(const item of this.items) {
+        for (const item of this.items) {
             console.log(`Item:${item.name()}, Packing:${item.packing().pack()}, Price:${item.price()}`)
         }
     }
@@ -122,7 +132,7 @@ class MealBuilder {
 
 let mealBuild = new MealBuilder()
 console.log("Veg Meal")
-let vegMeal =  mealBuild.prepareVegMeal()
+let vegMeal = mealBuild.prepareVegMeal()
 vegMeal.showItems()
 console.log(`Total Price:${vegMeal.getCost()}`)
 
