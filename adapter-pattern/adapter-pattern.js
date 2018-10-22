@@ -8,6 +8,7 @@ class MediaPlayer {
 }
 
 // ---- AdvancedMediaPlayer
+
 class AdvancedMediaPlayer {
     constructor() {
         if (new.target === AdvancedMediaPlayer) {
