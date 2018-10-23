@@ -30,6 +30,17 @@ class SkinDecorator extends Hero {
     }
 }
 
+class VoiceDecorator extends Hero {
+    constructor(decoratedHero) {
+        super();
+        this.decoratedHero = decoratedHero;
+    }
+
+    draw() {
+        this.decoratedHero.draw();
+    }
+}
+
 class MagicalGirlDecorator extends SkinDecorator {
     draw() {
         this.decoratedHero.draw();
@@ -50,11 +61,23 @@ class ProjectOriginDecorator extends SkinDecorator {
     }
 }
 
+class ProjectOriginVoiceDecorator extends VoiceDecorator {
+    draw() {
+        this.decoratedHero.draw();
+        this.setVoice();
+    }
+    setVoice() {
+        console.log("Voice: Project Origin");
+    }
+}
+
+
+
 let heroAhri = new Ahri();
 let heroVi = new Vi();
 
 let magicalGirlAhri = new MagicalGirlDecorator(new Ahri());
-let projectOriginVi = new ProjectOriginDecorator(new Vi());
+let projectOriginVi = new ProjectOriginVoiceDecorator(new ProjectOriginDecorator(new Vi()));
 
 console.log("Ahri with normal skin.");
 heroAhri.draw();
