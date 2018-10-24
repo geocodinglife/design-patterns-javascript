@@ -80,6 +80,6 @@ function getChainOfLoggers() {
 }
 
 let loggerChain = getChainOfLoggers();
-// loggerChain.logMessage(AbstractLogger.INFO, 'hehe');
-// loggerChain.logMessage(AbstractLogger.DEBUG, 'lala');
+loggerChain.logMessage(AbstractLogger.INFO, 'hehe');
+loggerChain.logMessage(AbstractLogger.DEBUG, 'lala');
 loggerChain.logMessage(AbstractLogger.ERROR, 'didi');
