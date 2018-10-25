@@ -62,7 +62,7 @@ class DivExpression extends OperatorExpression {
 
 class Calculator {
     constructor(expression) {
-        this.expression = expression;
+        this.expression = expression.replace(/ /g, '');
         this.context = new Context();
     }
 
@@ -113,6 +113,6 @@ class Calculator {
     }
 }
 
-let calc = new Calculator('a+b-c+a');
+let calc = new Calculator('a*b/c*a');
 
 console.log(calc.calculate());
