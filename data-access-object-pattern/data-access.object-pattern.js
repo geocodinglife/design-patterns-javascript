@@ -27,6 +27,7 @@ class StudentDao {
 class StudentDaoImpl extends StudentDao {
     constructor() {
         super();
+        // students: simulated database
         this.students = [];
         let student1 = new Student('Tom');
         let student2 = new Student('Ukiyoe');
